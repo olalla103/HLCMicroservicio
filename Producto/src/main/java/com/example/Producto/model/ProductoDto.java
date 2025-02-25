@@ -18,9 +18,4 @@ public class ProductoDto {
     private Integer stock;
     private String ubicacion;
 
-//    private String id;
-//    private String title;
-//    private String description;
-//    private Boolean published;
-
 }

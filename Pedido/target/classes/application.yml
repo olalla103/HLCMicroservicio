@@ -1,0 +1,12 @@
+server:
+  port: 8098
+spring:
+  application:
+    name:pedidoService
+main:
+  allow-bean-definition-overriding: true
+data:
+  mongodb:
+    database: pedidoservice_db
+    host: mongo_DB #182.28.0.11
+    port: 27017

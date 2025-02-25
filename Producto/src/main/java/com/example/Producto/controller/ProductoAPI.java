@@ -19,12 +19,4 @@ public interface ProductoAPI {
 
     ResponseEntity eliminarProducto(Integer id);
 
-//    List<ProductoDto> getAllProducto();
-//    Optional<ProductoDto> getProductoById(String id);
-//    List<ProductoDto> buscarPorNombre(String id);
-//    List<ProductoDto>findByPublished();
-//    ProductoDto guardar(ProductoDto Producto);
-//    ProductoDto actualizarProducto(ProductoDto productoDto, String id);
-//    ResponseEntity eliminarProducto(String id);
-//    ResponseEntity deleteAllProducto();
 }
