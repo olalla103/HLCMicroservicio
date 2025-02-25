@@ -6,10 +6,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface PedidoRepository {
-    //List<PedidoVO> findByPublishedTrue();
+public interface PedidoRepository extends MongoRepository<PedidoVO, String> {
     List<PedidoVO>  findAll();
-    Optional<PedidoVO> getPedidoById();
+    Optional<PedidoVO> findById(String id);
     List<PedidoVO> findByEstado(String estado);
-    //List<PedidoVO> findByPublished(boolean published);
+    List<PedidoVO> findByTipo(String tipo);
 }

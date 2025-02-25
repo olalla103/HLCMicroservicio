@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
@@ -13,12 +12,12 @@ import java.util.List;
 @NoArgsConstructor
 @Document
 @Builder
-public class PedidoVO {
+public class ProductoVO {
 
     @Id
     private String id;
-    private String tipo; // Entrada o salida
-    private String estado; // Pendiente, procesado o cancelado
-    private LocalDateTime fechaCreacion;
-    private List<ProductoVO> listaProductos;
+    private String nombre;
+    private int stock;
+    private String descripcion;
+    private String ubicacion;
 }
