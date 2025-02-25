@@ -8,14 +8,19 @@ import java.util.Optional;
 
 public interface ProductoAPI {
     List<ProductoDto> getAllProducto();
-    Optional<ProductoDto> getProductoId(String id);
+
+    Optional<ProductoDto> getProductoById(String id);
+
     List<ProductoDto> buscarPorNombre(String nombre);
+
     ProductoDto guardar(ProductoDto ProductoDto);
-    ProductoDto actualizarProducto(ProductoDto productoDto, String id);
+
+    ProductoDto actualizarProducto(ProductoDto productoDto, Integer id);
+
     ResponseEntity eliminarProducto(Integer id);
 
 //    List<ProductoDto> getAllProducto();
-//    Optional<ProductoDto> getProductoId(String id);
+//    Optional<ProductoDto> getProductoById(String id);
 //    List<ProductoDto> buscarPorNombre(String id);
 //    List<ProductoDto>findByPublished();
 //    ProductoDto guardar(ProductoDto Producto);

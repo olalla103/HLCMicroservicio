@@ -8,21 +8,24 @@ import java.util.stream.Collectors;
 
 public class ProductoMapper {
 
-    public static Producto productoMapperDtoToEntity(ProductoDto producto){
+    public static Producto productoMapperDtoToEntity(ProductoDto producto) {
         return Producto.builder()
                 .id(producto.getId())
                 .nombre(producto.getNombre())
                 .descripcion(producto.getDescripcion())
+                .stock(producto.getStock())
+                .ubicacion(producto.getUbicacion())
 
                 .build();
     }
 
-    public static ProductoDto productoMapperEntityToDto(Producto producto){
+    public static ProductoDto productoMapperEntityToDto(Producto producto) {
         return ProductoDto.builder()
                 .id(producto.getId())
-                .title(producto.getTitle())
-                .description(producto.getDescription())
-                .published(producto.getPublished())
+                .nombre(producto.getNombre())
+                .descripcion(producto.getDescripcion())
+                .stock(producto.getStock())
+                .ubicacion(producto.getUbicacion())
                 .build();
     }
 

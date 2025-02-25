@@ -16,61 +16,49 @@ import java.util.Optional;
 public class ProductoController implements ProductoAPI {
     @Autowired
     private ProductoService productoService;
+
     @Autowired
     private ProductoRepository productoRepository;
-    @Override
-    @GetMapping("/producto")
-    public List<ProductoDto> getAllProducto(){return productoService.getAllProducto();}
 
     @Override
-    public Optional<ProductoDto> getProductoId(String id) {
-        return Optional.empty();
+    @GetMapping("/producto")
+    public List<ProductoDto> getAllProducto() {
+        return productoService.getAllProducto();
     }
 
     @Override
+    public Optional<ProductoDto> getProductoById(String id) {
+        return Optional.empty();
+    }
+
+
     @GetMapping("/producto/{id}")
-    public Optional<ProductoDto> getTutorialById(@PathVariable String id) {
-        return productoService.getTutorialById(id);
+    public Optional<ProductoDto> getTutorialById(@PathVariable Integer id) {
+        return productoService.getProductoById(id);
     }
 
     @Override
     @GetMapping("/producto/title/{nombre}")
     public List<ProductoDto> buscarPorNombre(@PathVariable String nombre) {
-        return productoService.findByTitleContaining(nombre);
-    }
-
-    @Override
-    @GetMapping("/producto/published")
-    public List<ProductoDto> findByPublished() {
-        return productoService.findByPublished();
+        return productoService.buscarPorNombre(nombre);
     }
 
     @Override
     @PostMapping("/producto")
     public ProductoDto guardar(@RequestBody ProductoDto productoDto) {
-        return productoService.save(productoDto);
-    }
-
-    @Override
-    public ProductoDto actualizarProducto(ProductoDto productoDto, String id) {
-        return null;
-    }
-
-    @Override
-    public ResponseEntity eliminarProducto(String id) {
-        return null;
+        return productoService.guardar(productoDto);
     }
 
     @Override
     @PutMapping("/producto/{id}")
-    public ProductoDto updateTutorial(@RequestBody ProductoDto producto, @PathVariable String id) {
-        return productoService.updateTutorial(producto);
+    public ProductoDto actualizarProducto(@RequestBody ProductoDto producto, @PathVariable Integer id) {
+        return productoService.actualizarProducto(producto, id);
     }
 
     @Override
     @DeleteMapping("/producto/{id}")
     public ResponseEntity eliminarProducto(@PathVariable Integer id) {
-        return productoService.deleteTutorial(id);
+        return productoService.eliminarProducto(id);
     }
 
 }

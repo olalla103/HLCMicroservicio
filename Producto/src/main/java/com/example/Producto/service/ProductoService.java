@@ -15,8 +15,8 @@ public interface ProductoService {
 
     ProductoDto guardar(ProductoDto productoDto); //funciona
 
-    ProductoDto actualizarProducto(ProductoDto productoDto); //funciona
+    ProductoDto actualizarProducto(ProductoDto productoDto, Integer id); //funciona
 
-    ResponseEntity eliminarProducto(String id); //funciona
+    ResponseEntity eliminarProducto(Integer id); //funciona
 
 }

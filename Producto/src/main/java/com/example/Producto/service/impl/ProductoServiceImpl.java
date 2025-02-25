@@ -49,7 +49,7 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public ProductoDto actualizarProducto(ProductoDto producto) {
+    public ProductoDto actualizarProducto(ProductoDto producto, Integer id) {
         Optional<Producto> existingProductoOptional = productoRepository.findById(producto.getId());
 
         if (existingProductoOptional.isPresent()) {
