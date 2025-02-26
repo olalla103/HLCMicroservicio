@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: usuariosService
+
+main:
+  allow-bean-definition-overriding: true
+
+data:
+  mongodb:
+    database: usuariosService_db
+    host: localhost
+    port: 27017
