@@ -30,9 +30,10 @@ public class InventarioController {
         return inventarioService.registrarSalida(idProducto, cantidad);
     }
 
-    @Operation(summary = "Consultar inventario por ID", description = "Obtiene información del inventario de un producto específico")
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<InventarioDto>> consultarInventario(@PathVariable String id) {
-        return ResponseEntity.ok(inventarioService.consultarInventario(id));
+    @Operation(summary = "Consultar stock de un producto", description = "Obtiene la cantidad de stock disponible para un producto específico")
+    @GetMapping("/stock/{idProducto}")
+    public ResponseEntity<Integer> consultarStock(@PathVariable String idProducto) {
+        return ResponseEntity.ok(inventarioService.consultarStock(idProducto));
     }
+
 }

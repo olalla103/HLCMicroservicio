@@ -3,11 +3,12 @@ server:
 
 spring:
   application:
-    name: Inventario
+    name: inventarioService
+main:
+  allow-bean-definition-overriding: true
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/inventario_db  # URI correcta para MongoDB
+      database: inventarioService_db
+      port: 27017
 
-main:
-  allow-bean-definition-overriding: true
