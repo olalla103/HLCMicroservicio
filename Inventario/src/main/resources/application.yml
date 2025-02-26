@@ -1,15 +1,13 @@
 server:
   port: 8080
+
 spring:
   application:
     name: Inventario
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/inventario_db
-      database: inventario_db
+      uri: mongodb://localhost:27017/inventario_db  # URI correcta para MongoDB
 
-logging:
-  level:
-    root: INFO
-
+main:
+  allow-bean-definition-overriding: true
