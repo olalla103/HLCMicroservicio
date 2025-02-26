@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Inventario
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/inventario_db
+      database: inventario_db
+
+logging:
+  level:
+    root: INFO
+
