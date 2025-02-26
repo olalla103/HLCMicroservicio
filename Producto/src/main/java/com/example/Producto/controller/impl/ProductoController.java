@@ -5,6 +5,7 @@ import com.example.Producto.model.ProductoDto;
 import com.example.Producto.repository.ProductoRepository;
 import com.example.Producto.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +34,7 @@ public class ProductoController implements ProductoAPI {
 
 
     @GetMapping("/producto/{id}")
-    public Optional<ProductoDto> getTutorialById(@PathVariable Integer id) {
+    public Optional<ProductoDto> getTutorialById(@PathVariable String id) {
         return productoService.getProductoById(id);
     }
 
@@ -51,13 +52,23 @@ public class ProductoController implements ProductoAPI {
 
     @Override
     @PutMapping("/producto/{id}")
-    public ProductoDto actualizarProducto(@RequestBody ProductoDto producto, @PathVariable Integer id) {
-        return productoService.actualizarProducto(producto, id);
+    public ResponseEntity<ProductoDto> actualizarProducto(
+            @RequestBody ProductoDto producto,
+            @PathVariable String id) {  // <-- El ID se recibe como String desde la URL
+
+        ProductoDto updatedProducto = productoService.actualizarProducto(producto, id);
+
+        if (updatedProducto == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity.ok(updatedProducto);
     }
+
 
     @Override
     @DeleteMapping("/producto/{id}")
-    public ResponseEntity eliminarProducto(@PathVariable Integer id) {
+    public ResponseEntity eliminarProducto(@PathVariable String id) {
         return productoService.eliminarProducto(id);
     }
 

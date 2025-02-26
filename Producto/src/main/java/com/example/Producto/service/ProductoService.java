@@ -9,14 +9,14 @@ import java.util.Optional;
 public interface ProductoService {
     List<ProductoDto> getAllProducto(); //funciona
 
-    Optional<ProductoDto> getProductoById(Integer id); //funciona
+    Optional<ProductoDto> getProductoById(String id); //funciona
 
     List<ProductoDto> buscarPorNombre(String nombre);
 
     ProductoDto guardar(ProductoDto productoDto); //funciona
 
-    ProductoDto actualizarProducto(ProductoDto productoDto, Integer id); //funciona
+    ProductoDto actualizarProducto(ProductoDto productoDto, String id); //funciona
 
-    ResponseEntity eliminarProducto(Integer id); //funciona
+    ResponseEntity eliminarProducto(String id); //funciona
 
 }

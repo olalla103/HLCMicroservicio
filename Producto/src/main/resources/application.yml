@@ -7,6 +7,6 @@ spring:
 
   data:
     mongodb:
-      host: mongo # <-- Asegúrate de que coincide con el nombre del contenedor
+      host: localhost # <-- Asegï¿½rate de que coincide con el nombre del contenedor
       port: 27017
       database: productoservice_db

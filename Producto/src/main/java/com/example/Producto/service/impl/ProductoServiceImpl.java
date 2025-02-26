@@ -29,8 +29,8 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public Optional<ProductoDto> getProductoById(Integer id) {
-        Optional<Producto> productoOptional = productoRepository.findById(String.valueOf(id));
+    public Optional<ProductoDto> getProductoById(String id) {
+        Optional<Producto> productoOptional = productoRepository.findById(id);
 
         return productoOptional.map(ProductoMapper::productoMapperEntityToDto);
     }
@@ -50,8 +50,8 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public ProductoDto actualizarProducto(ProductoDto producto, Integer id) {
-        Optional<Producto> existingProductoOptional = productoRepository.findById(String.valueOf(producto.getId()));
+    public ProductoDto actualizarProducto(ProductoDto producto, String id) {
+        Optional<Producto> existingProductoOptional = productoRepository.findById(id);
 
         if (existingProductoOptional.isPresent()) {
             Producto existingProducto = existingProductoOptional.get();
@@ -68,12 +68,13 @@ public class ProductoServiceImpl implements ProductoService {
         }
     }
 
+
     @Override
-    public ResponseEntity eliminarProducto(Integer id) {
+    public ResponseEntity eliminarProducto(String id) {
         try {
-            Optional<Producto> existingProductoOptional = productoRepository.findById(String.valueOf(id));
+            Optional<Producto> existingProductoOptional = productoRepository.findById(id);
             if (existingProductoOptional.isPresent()) {
-                productoRepository.deleteById(String.valueOf(id));
+                productoRepository.deleteById(id);
                 return ResponseEntity.ok("Producto eliminado exitosamente");
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado con ID: " + id);

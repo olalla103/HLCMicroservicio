@@ -15,8 +15,8 @@ public interface ProductoAPI {
 
     ProductoDto guardar(ProductoDto ProductoDto);
 
-    ProductoDto actualizarProducto(ProductoDto productoDto, Integer id);
+    ResponseEntity<ProductoDto> actualizarProducto(ProductoDto productoDto, String id);
 
-    ResponseEntity eliminarProducto(Integer id);
+    ResponseEntity eliminarProducto(String id);
 
 }
