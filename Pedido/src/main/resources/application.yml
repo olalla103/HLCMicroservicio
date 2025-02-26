@@ -1,13 +1,15 @@
 server:
   port: 8080
+
 spring:
   application:
-    name:pedidoService
+    name: pedidoService
+
 main:
   allow-bean-definition-overriding: true
+
 data:
   mongodb:
     database: pedidoservice_db
-    host: mongo_DB #182.28.0.11
+    host: localhost  # Cambiado de "mongo_DB" a "localhost"
     port: 27017
-
