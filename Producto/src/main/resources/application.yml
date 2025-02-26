@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: productoService
+
+  data:
+    mongodb:
+      host: localhost # <-- Aseg�rate de que coincide con el nombre del contenedor
+      port: 27017
+      database: productoservice_db
