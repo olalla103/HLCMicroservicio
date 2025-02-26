@@ -1,5 +1,5 @@
 server:
-  port: 8098
+  port: 8080
 spring:
   application:
     name:pedidoService
@@ -10,3 +10,4 @@ data:
     database: pedidoservice_db
     host: mongo_DB #182.28.0.11
     port: 27017
+
