@@ -1,0 +1,25 @@
+TEMA 3
+Actividad 3.1:
+Realiza un programa java que admita desde la línea de comandos un nombre de 
+máquina o una dirección IP y visualice información sobre ella.
+
+Actividad 3.2:
+Realiza un programa servidor TCP que acepte dos clientes. Muestra por cada 
+cliente conectado sus puertos local y remoto
+Crea también el programa cliente que se conecte a ese servidor. Muestra los puertos
+locales y remotos a los que está conectado su socket, y la dirección IP de la máquina remota 
+a la que se conecta.
+
+Actvidad 3.3:
+Crea un programa servidor que envíe un mensaje a otro programa cliente y el programa
+cliente que le devuelva el mensaje en minúscula.
+
+Actividad 3.4:
+Crea un programa cliente que introduzca por teclado un número entero y se lo envíe al
+servidor. El servidor le devolverá el cuadrado del número.
+
+Actividad 3.5:
+Crea un programa servidor que pueda atender hasta 3 clientes. Debe enviar a cada cliente un 
+mensaje indicando el número de cliente que es. Este número será 1, 2 ó 3. El cliente mostrará el 
+mensaje recibido. Cambia el programa para que lo haga para N clientes, siendo N un parámetro
+que tendrás que definir en el programa.
